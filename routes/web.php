@@ -40,5 +40,6 @@ Route::post('/add_to_cart',[App\Http\Controllers\CartController::class, 'add'])-
 Route::get('welcome', [WelcomeController::class, 'welcome'])->name('welcome');
 Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::patch('update-cart', [\App\Http\Controllers\DishController::class, 'update'])->name('update-cart');
 
 Route::delete('remove-from-cart',[\App\Http\Controllers\DishController::class, 'remove'])->name('remove-from-cart');

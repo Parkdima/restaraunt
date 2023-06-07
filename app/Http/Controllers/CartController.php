@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Dish;
+use App\Models\Drink;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -15,9 +16,9 @@ class CartController extends Controller
      */
     public function index(Request $request)
     {
-
+        $drinks = Drink::all();
         $dishes = Dish::all();
-        return view('cart.index', compact('dishes'));
+        return view('cart.index', compact(['dishes', 'drinks']));
     }
 
     public function addToCart(Request $request)

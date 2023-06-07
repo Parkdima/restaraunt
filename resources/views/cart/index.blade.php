@@ -55,16 +55,20 @@
 @push('scripts')
 
     <script>
+        let drinks = '@json($drinks)';
         let dishes = '@json($dishes)';
 
         $(document).ready(function(){
 
+            let allDrinks = JSON.parse(drinks);
             let allDishes = JSON.parse(dishes);
             let storageDishes = [];
             if(sessionStorage.getItem('cart')){
                 storageDishes = JSON.parse(sessionStorage.getItem('cart')).products ?? [];
+                storageDrinks = JSON.parse(sessionStorage.getItem('cart')).products ?? [];
             }
             console.log(allDishes);
+            console.log(allDrinks);
             storageDishes.forEach(function (element){
 
                 let index = allDishes.findIndex(item => item.id === element.id);
@@ -125,13 +129,13 @@
 
         });
 
-        $(document).on('change','.quantity', function (e) {
-            const id = $(this).data('cost');
-            subTotal = cost*quantity;
-
-
-
-        });
+        // $(document).on('change','.quantity', function (e) {
+        //     const id = $(this).data('cost');
+        //     subTotal = cost*quantity;
+        //
+        //
+        //
+        // });
 
 
 
