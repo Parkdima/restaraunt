@@ -1,0 +1,21 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+
+class Welcome extends Model
+{
+    use HasFactory;
+
+//    public function dish()
+//    {
+//        return $this->hasMany(Dish::class);
+//    }
+//
+//    public function category()
+//    {
+//        return $this->hasMany(Category::class);
+//    }
+}
